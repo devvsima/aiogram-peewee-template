@@ -1,20 +1,17 @@
 # aiogram
-from aiogram import Dispatcher, executor, types
+from aiogram import Dispatcher, executor
 
-# my scripts
 from database import *
 from app import *
-
-
 from loader import dp, bot
 
 
 async def on_startup(_):
-    print(" [ Бот запущен ] ")
+    print(" [On_startup] ")
 
 
 async def on_shutdown(dispatcher: Dispatcher):
-    print("Shutting down..")
+    print("Shutting down...")
 
 
 if __name__ == "__main__":
