@@ -1,8 +1,6 @@
-# aiogram
 from aiogram import Dispatcher, executor
-
 from database import *
-from app import *
+from app import middlewares, filters, handlers
 from loader import dp, bot
 
 
