@@ -2,14 +2,17 @@ from aiogram import Dispatcher, executor
 from database import *
 from app import middlewares, filters, handlers
 from loader import dp, bot
+from utils.misc.logging import *
+
+# import logging
 
 
 async def on_startup(_):
-    print(" [On_startup] ")
+    logging.info(" [On_startup] ")
 
 
 async def on_shutdown(dispatcher: Dispatcher):
-    print("Shutting down...")
+    logging.info("Shutting down...")
 
 
 if __name__ == "__main__":
