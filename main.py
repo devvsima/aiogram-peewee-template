@@ -4,19 +4,17 @@ from app import middlewares, filters, handlers
 from loader import dp, bot
 from utils.misc.logging import *
 
-# import logging
-
 
 async def on_startup(_):
-    logging.info(" [On_startup] ")
+    print(" [On_startup] ")
 
 
 async def on_shutdown(dispatcher: Dispatcher):
-    logging.info("Shutting down...")
+    print("Shutting down...")
 
 
 if __name__ == "__main__":
-    executor.start_polling(
+    executor.start_polling(     
         dp,
         on_startup=on_startup,
         on_shutdown=on_shutdown,

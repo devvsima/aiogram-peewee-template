@@ -11,3 +11,7 @@ DIR = Path(__file__).absolute().parent.parent
 token_api = env.str("TOKEN", default=None)
 banned_users = env.str("BANED", default=None)
 admins = env.str("ADMINS", default=None)
+I18N_DOMAIN = 'bot'
+print(admins)
+LOCALES_DIR = f'{DIR}\config\locales'
+

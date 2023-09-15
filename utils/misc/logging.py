@@ -1,9 +1,9 @@
 import logging
 
 logging.basicConfig(
-    level=logging.DEBUG,  # Уровень логгирования (может быть DEBUG, INFO, WARNING, ERROR, CRITICAL)
+    level=logging.DEBUG,  # (может быть DEBUG, INFO, WARNING, ERROR, CRITICAL)
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    filename="config/logs/my_app.log",  # Имя файла, в который будет записываться лог
+    filename="config/logs/my_app.log",
 )
 logger = logging.getLogger(__name__)
 
