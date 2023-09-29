@@ -2,7 +2,7 @@ from aiogram import Dispatcher, executor
 from database import *
 from app import middlewares, filters, handlers
 from loader import dp, bot
-from utils.misc.logging import *
+from utils.misc.set_bot_commands import set_defualt_commands
 
 
 async def on_startup(_):
@@ -10,6 +10,7 @@ async def on_startup(_):
 
 
 async def on_shutdown(dispatcher: Dispatcher):
+    await set_defualt_commands(dp=dp)
     print("Shutting down...")
 
 
