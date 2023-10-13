@@ -5,5 +5,6 @@ from loader import dp, bot, _
 @dp.message_handler(CommandStart())
 async def comm_start(message: types.Message):
     await message.answer(
-        text=_("Добро пожаловать"),
+        text=_(f"👋, <a href='tg://user?id={message.from_user.id}'>{(message.from_user.full_name)}</a>"),
+        parse_mode='html'
     )
