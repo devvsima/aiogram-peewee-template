@@ -2,7 +2,7 @@
 .fleet
 .vscode
 .venv
-
+.sqlite
 **/__pycache__
 
 **/.env

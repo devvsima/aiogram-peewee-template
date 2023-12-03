@@ -1,8 +1,10 @@
-from .connect import coll_users
+from .base import User
 
-async def get_user(id):
-    return coll_users.find_one({"_id":id})
+def get_user(id):
+    return User(id=id)
 
-async def add_user(id):
-    if await get_user(id) is None:
-        return coll_users.insert_one({"_id":id})
+
+def add_user(id, name):
+    newUsr = User.create(id=id, name=name)
+
+    

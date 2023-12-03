@@ -1,5 +1,4 @@
 from aiogram import Dispatcher, executor
-from database import connect
 from app import middlewares, filters, handlers
 from loader import dp, bot
 
