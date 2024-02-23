@@ -1,10 +1,12 @@
 from aiogram import types, Dispatcher
-from loader import dp, bot, _
-from aiogram.dispatcher.filters import CommandSettings
+from aiogram.dispatcher.filters import CommandSettings, Command
 
-@dp.message_handler(commands="Настройки⚙️")
+from loader import dp, bot, _
+
+
+@dp.message_handler(Command("Settings ⚙️"))
 @dp.message_handler(CommandSettings())
-async def comm_start(message: types.Message):
+async def _settings_command(message: types.Message):
     await message.answer(
-        text=_("Настройки⚙️"),
+        text=_("You settings ⚙️"),
     )

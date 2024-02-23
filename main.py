@@ -4,8 +4,8 @@ from loader import dp, bot
 
 
 async def on_startup(_):
-    from utils.misc.set_bot_commands import set_defualt_commands
-    await set_defualt_commands(dp=dp)
+    from app.commands import set_default_commands
+    await set_default_commands()
     print(" [On_startup] ")
 
 async def on_shutdown(dispatcher: Dispatcher):
