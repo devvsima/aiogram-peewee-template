@@ -1,4 +1,4 @@
-from aiogram import types, Dispatcher
+from aiogram import types
 from aiogram.dispatcher.filters import CommandHelp, Command
 
 from loader import dp, bot, _

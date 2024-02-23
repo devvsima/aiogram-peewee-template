@@ -2,7 +2,6 @@ from aiogram import types, Dispatcher
 from aiogram.dispatcher.filters import Command
 
 from loader import dp, bot
-from data.config import admins
 from app.filters.admin import Admin
 
 
