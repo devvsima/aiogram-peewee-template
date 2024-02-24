@@ -1,11 +1,12 @@
-from aiogram import types, Dispatcher
+from aiogram import types
+from aiogram.dispatcher.filters import CommandHelp, Command
+
 from loader import dp, bot, _
-from aiogram.dispatcher.filters import CommandHelp
 
 
-@dp.message_handler(commands="Помощь🆘")
+@dp.message_handler(Command("Помощь🆘"))
 @dp.message_handler(CommandHelp())
-async def comm_start(message: types.Message):
+async def _help_command(message: types.Message):
     await message.answer(
         text=_("Описание"),
     )

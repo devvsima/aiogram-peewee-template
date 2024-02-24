@@ -1,9 +1,12 @@
 from aiogram import types, Dispatcher
-from loader import dp, bot
-from data.config import admins
+from aiogram.dispatcher.filters import Command
 
-@dp.message_handler(user_id=admins, commands="admin")
-async def comm_start(message: types.Message):
+from loader import dp, bot
+from app.filters.admin import Admin
+
+
+@dp.message_handler(Admin(), Command("admin"))
+async def _admin_command(message: types.Message):
     await message.answer(
-        text=f"Вы админ"
+        text=f"You admin!"
     )
