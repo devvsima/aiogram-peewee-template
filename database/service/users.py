@@ -1,13 +1,21 @@
 from ..models.users import Users
+from utils.misc.logging import logger
 
-
-def add_user(user_id) -> None:
-    if not find_user:
-        Users.create(id=user_id)
-
-def find_user(user_id) -> bool:
-    return Users.get(Users.id == user_id).exists()
 
 def get_user(user_id):
     return Users.select().where(Users.id == user_id)
+
+def get_or_create_user(id: int, username: str = None, language: str = None) -> Users:
+    user = get_user(id)
+
+    if user:
+        return user
+
+    return create_user(id, username, language)
+
+def create_user(id: int, username: str = None, language: str = None) -> Users:
+    logger.info(f"New user {username} | {id}")
+    new_user = Users.create(id=id, username=username, language=language)
+    return new_user
+
 

@@ -11,7 +11,7 @@ async def base_ikb():
         resize_keyboard=True,
         inline_keyboard=[
             [
-                InlineKeyboardButton(text="Название", callback_data="callback"),
+                InlineKeyboardButton(text="click", callback_data="callback"),
             ],
         ],
     )
