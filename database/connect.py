@@ -1,9 +1,9 @@
 from peewee import PostgresqlDatabase, SqliteDatabase,Model
-from data.config import db_name, db_host ,db_port, db_user, db_password, DIR
+from data.config import DB_NAME, DB_HOST ,DB_PORT, DB_USER, DB_PASS, DIR
 
 
-if db_name and db_host and db_port and db_user and db_password:
-    db = PostgresqlDatabase(db_name, host=db_host, port=db_port, user=db_user, password=db_password)
+if DB_NAME and DB_HOST and DB_PORT and DB_USER and DB_PASS:
+    db = PostgresqlDatabase(DB_NAME, host=DB_HOST, port=DB_PORT, user=DB_USER, password=DB_PASS)
 
 else:
     db = SqliteDatabase(f"{DIR}/database/db.sqlite3")
