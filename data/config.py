@@ -15,8 +15,8 @@ admins = env.list("ADMINS", default=None, subcast=int)
 DB_NAME = env.str("DB_NAME", default=None)
 DB_HOST = env.str("DB_HOST", default="localhost")
 DB_PORT = env.int("DB_PORT", default=5432)
-DB_USER = env.str("DB_USER", default="postgres")
-DB_PASS = env.str("DB_PASS", default="postgres")
+DB_USER = env.str("DB_USER", default=None)
+DB_PASS = env.str("DB_PASS", default=None)
 RATE_LIMIT = env.int("RATE_LIMIT", default=5)
 
 I18N_DOMAIN = 'bot'
