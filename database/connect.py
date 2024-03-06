@@ -1,14 +1,13 @@
-from peewee import PostgresqlDatabase, SqliteDatabase,Model
-from data.config import DB_NAME, DB_HOST ,DB_PORT, DB_USER, DB_PASS, DIR
+from pymongo import MongoClient
+from data.config import mongodb_url
 
 
-if DB_NAME and DB_HOST and DB_PORT and DB_USER and DB_PASS:
-    db = PostgresqlDatabase(DB_NAME, host=DB_HOST, port=DB_PORT, user=DB_USER, password=DB_PASS)
+client = MongoClient(mongodb_url)
 
-else:
-    db = SqliteDatabase(f"{DIR}/database/db.sqlite3")
-db.connect()
+db = client["studybot"]
+db_users = db.users
 
-class BaseModel(Model):
-    class Meta:
-        database = db
+
+async def db_close():
+    client.close()
+

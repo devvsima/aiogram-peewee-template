@@ -1,21 +1,13 @@
-from ..models.users import Users
-from utils.misc.logging import logger
+from ..connect import db_users
 
+async def get_user(id):
+    return db_users.find_one({"_id":id})
 
-def get_user(user_id):
-    return Users.select().where(Users.id == user_id)
+async def add_user(id):
+    if await get_user(id) is None:
+        return db_users.insert_one({"_id":id})
 
-def get_or_create_user(id: int, username: str = None, language: str = None) -> Users:
-    user = get_user(id)
-
-    if user:
-        return user
-
-    return create_user(id, username, language)
-
-def create_user(id: int, username: str = None, language: str = None) -> Users:
-    logger.info(f"New user {username} | {id}")
-    new_user = Users.create(id=id, username=username, language=language)
-    return new_user
-
-
+async def get_or_create_user(id):
+    user = await get_user(id)
+    if user: return user
+    else: add_user(id)

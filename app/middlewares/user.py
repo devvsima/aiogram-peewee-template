@@ -15,16 +15,16 @@ class UsersMiddleware(BaseMiddleware):
 
         user = message.from_user
 
-        data['user'] = get_or_create_user(user.id, user.username, user.language_code)
+        data['user'] = await get_or_create_user(user.id)
 
     @staticmethod
     async def on_process_callback_query(callback_query: CallbackQuery, data: dict[str]):
         user = callback_query.from_user
 
-        data['user'] = get_or_create_user(user.id, user.username, user.language_code)
+        data['user'] = await get_or_create_user(user.id)
 
     @staticmethod
     async def on_process_inline_query(inline_query: InlineQuery, data: dict[str]):
         user = inline_query.from_user
 
-        data['user'] = get_or_create_user(user.id, user.username, user.language_code)
+        data['user'] = await get_or_create_user(user.id)
