@@ -78,11 +78,11 @@ BOT_TOKEN=123452345243:Asdfasdfasf
 
 Set the database connection parameters:
 
-- `DB_NAME` - название базы данных
-- `DB_HOST` - хост базы данных (по умолчанию `'localhost'`)
-- `DB_PORT` - порт базы данных (по умолчанию `5432`)
-- `DB_USER` - пользователь с доступом к базе данных
-- `DB_PASS` - пароль от базы данных
+- `DB_NAME` - database name
+- `DB_HOST` - database host (default = 'localhost')
+- `DB_PORT` - database port (default = `5432`)
+- `DB_USER` - database user
+- `DB_PASS` - database password
 
 ---
 
