@@ -20,5 +20,5 @@ DB_PASS = env.str("DB_PASS", default=None)
 RATE_LIMIT = env.int("RATE_LIMIT", default=5)
 
 I18N_DOMAIN = 'bot'
-LOCALES_DIR = f'{DIR}\config\locales'
+LOCALES_DIR = f'{DIR}\data\locales'
 
