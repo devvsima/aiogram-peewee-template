@@ -1,1 +1,1 @@
-from .config import token_api
+from .config import TG_TOKEN
