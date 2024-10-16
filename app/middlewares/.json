@@ -1,0 +1,18 @@
+{
+    "message_id": 42,
+    "from": {
+        "id": 7180893128,
+        "is_bot": false,
+        "first_name": "selvik",
+        "username": "selvik3"
+    },
+    "chat": {
+        "id": -1002300910034,
+        "title": "ludka",
+        "type": "supergroup"
+    },
+    "date": 1729108863,
+    "text": "b"
+}
+
+

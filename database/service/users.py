@@ -8,7 +8,7 @@ def get_user(id):
     except:
         return None
 
-def get_or_create_user(id: int, username: str = None, language: str = None) -> Users:
+def get_or_create_user(id: int, username: str = None, language: str = "ru") -> Users:
     user = get_user(id)
 
     if user:
