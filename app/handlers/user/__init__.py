@@ -1,5 +1,5 @@
 from .start import dp
-from .help import dp
-from .settings import dp
+from .voice import dp
+from .text import dp
 
 __all__ = ["dp"]
